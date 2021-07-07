@@ -1,6 +1,7 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Homepage from "./Homepage";
+import { Route, Switch, Redirect } from "react-router-dom";
+import Homepage from "../Homepage";
+import CompanyList from "../companies/CompanyList";
 
 function Routes({}) {
   return (
@@ -9,20 +10,21 @@ function Routes({}) {
         <Homepage />
       </Route>
       <Route exact path="/signup">
-        <Signup />
+        {/* <Signup /> */}
       </Route>
       <Route exact path="/login">
-        <Login />
+        {/* <Login /> */}
       </Route>
       <Route exact path="/companies">
-        <Companies />
+        <CompanyList />
       </Route>
       <Route exact path="/jobs">
-        <Jobs />
+        {/* <Jobs /> */}
       </Route>
       <Route exact path="/profile">
-        <Profile />
+        {/* <Profile /> */}
       </Route>
+      <Redirect to="/" />
     </Switch>
   );
 }

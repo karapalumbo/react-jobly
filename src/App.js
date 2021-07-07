@@ -2,16 +2,15 @@ import "./App.css";
 import NavBar from "./NavBar";
 import { BrowserRouter } from "react-router-dom";
 import Homepage from "./Homepage";
-import CompanyList from "./companies/CompanyList";
+import Routes from "./routes/Routes";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <NavBar />
+        <Routes />
       </BrowserRouter>
-      <Homepage />
-      <CompanyList />
     </div>
   );
 }
