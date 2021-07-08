@@ -54,7 +54,7 @@ class JoblyApi {
 
   /** Get jobs */
   static async getJobs() {
-    let res = await this.request(`jobs`);
+    let res = await this.request("jobs");
     return res.jobs;
   }
 

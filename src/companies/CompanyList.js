@@ -17,7 +17,7 @@ function CompanyList() {
 
   return (
     <div>
-      <SearchForm searchCompany={companyInfo} />
+      <SearchForm searchCompanyAndJob={companyInfo} />
       <div>
         {companies.map((c) => {
           return (

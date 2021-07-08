@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "reactstrap";
 
-const SearchForm = ({ searchCompany }) => {
+const SearchForm = ({ searchCompanyAndJob }) => {
   const [formData, setFormData] = useState("");
 
   const handleChange = (e) => {
@@ -10,7 +10,7 @@ const SearchForm = ({ searchCompany }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    searchCompany({ formData });
+    searchCompanyAndJob({ formData });
     setFormData(formData);
   };
 

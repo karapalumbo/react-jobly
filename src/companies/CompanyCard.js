@@ -8,7 +8,9 @@ function CompanyCard({ name, description, logoUrl, handle }) {
         <div>
           <h5>
             {name}
-            {/* <img src={logoUrl} alt={name} /> */}
+            {logoUrl && (
+              <img src={logoUrl} alt={name} className="float-right ml-5" />
+            )}
           </h5>
           <p>{description}</p>
         </div>

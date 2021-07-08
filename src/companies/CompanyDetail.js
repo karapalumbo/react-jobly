@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import JoblyApi from "../api/api";
+import JobList from "../jobs/JobList";
 
 function CompanyDetail() {
   const { handle } = useParams();
@@ -20,6 +21,7 @@ function CompanyDetail() {
     <div>
       <h5>{company.name}</h5>
       <p>{company.description}</p>
+      <JobList />
     </div>
   );
 }
