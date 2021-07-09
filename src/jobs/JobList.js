@@ -1,39 +1,38 @@
 import React, { useState, useEffect } from "react";
 import JoblyApi from "../api/api";
 import JobCard from "./JobCard";
-import { Card } from "reactstrap";
+// import JobDetail from "./JobDetail";
 
-function JobList() {
-  const [jobs, setJobs] = useState([]);
+function JobList({ companyJobs }) {
+  //   const [jobs, setJobs] = useState(null);
 
-  const jobInfo = async () => {
-    const resp = await JoblyApi.getJobs();
-    setJobs(resp);
-  };
+  //   const jobInfo = async () => {
+  //     const resp = await JoblyApi.getJobs();
+  //     setJobs(resp);
+  //   };
 
-  useEffect(() => {
-    jobInfo();
-  }, []);
+  //   useEffect(() => {
+  //     jobInfo();
+  //   }, []);
 
   return (
     <div>
-      <div>
-        {jobs.map((job) => {
-          return (
-            <Card>
-              <JobCard
-                key={job.id}
-                title={job.title}
-                salary={job.salary}
-                equity={job.equity}
-                companyName={job.companyName}
-              />
-            </Card>
-          );
-        })}
-      </div>
+      {/* <JobDetail jobs={jobs} /> */}
+
+      {companyJobs.map((job) => (
+        <JobCard
+          key={job.id}
+          id={job.id}
+          title={job.title}
+          salary={job.salary}
+          equity={job.equity}
+          companyName={job.companyName}
+        />
+      ))}
     </div>
   );
+
+  //   return <JobDetail jobs={jobs} />;
 }
 
 export default JobList;
