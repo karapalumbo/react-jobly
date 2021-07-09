@@ -1,23 +1,10 @@
-import JobCard from "./JobCard";
 import React, { useState, useEffect } from "react";
-import JoblyApi from "../api/api";
+import JobCard from "./JobCard";
 
-function JobDetail() {
-  const [jobs, setJobs] = useState(null);
-
-  const jobInfo = async () => {
-    const resp = await JoblyApi.getJobs();
-    setJobs(resp);
-  };
-
-  useEffect(() => {
-    jobInfo();
-  }, []);
-  console.log(jobs);
-
+function JobDetail({ jobs }) {
   return (
     <div>
-      {/* {jobs.map((job) => (
+      {jobs.map((job) => (
         <JobCard
           key={job.id}
           id={job.id}
@@ -26,7 +13,7 @@ function JobDetail() {
           equity={job.equity}
           companyName={job.companyName}
         />
-      ))} */}
+      ))}
     </div>
   );
 }
