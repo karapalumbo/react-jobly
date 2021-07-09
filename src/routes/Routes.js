@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Homepage from "../Homepage";
 import CompanyList from "../companies/CompanyList";
 import CompanyDetail from "../companies/CompanyDetail";
-import JobList from "../jobs/JobList";
+import JobDetail from "../jobs/JobDetail";
 
 function Routes({}) {
   return (
@@ -24,7 +24,7 @@ function Routes({}) {
         <CompanyDetail />
       </Route>
       <Route exact path="/jobs">
-        <JobList />
+        <JobDetail />
       </Route>
       <Route exact path="/profile">
         {/* <Profile /> */}

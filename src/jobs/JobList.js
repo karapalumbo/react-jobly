@@ -3,7 +3,7 @@ import JoblyApi from "../api/api";
 import JobCard from "./JobCard";
 // import JobDetail from "./JobDetail";
 
-function JobList({ companyJobs }) {
+function JobList({ jobs }) {
   //   const [jobs, setJobs] = useState(null);
 
   //   const jobInfo = async () => {
@@ -19,7 +19,7 @@ function JobList({ companyJobs }) {
     <div>
       {/* <JobDetail jobs={jobs} /> */}
 
-      {companyJobs.map((job) => (
+      {jobs.map((job) => (
         <JobCard
           key={job.id}
           id={job.id}
