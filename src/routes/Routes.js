@@ -3,20 +3,21 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Homepage from "../Homepage";
 import CompanyList from "../companies/CompanyList";
 import CompanyDetail from "../companies/CompanyDetail";
-// import JobDetail from "../jobs/JobDetail";
 import JobList from "../jobs/JobList";
+import LoginForm from "../LoginForm";
+import SignupForm from "../SignupForm";
 
-function Routes({}) {
+function Routes({ login, signup }) {
   return (
     <Switch>
       <Route exact path="/">
         <Homepage />
       </Route>
       <Route exact path="/signup">
-        {/* <Signup /> */}
+        <SignupForm signup={signup} />
       </Route>
       <Route exact path="/login">
-        {/* <Login /> */}
+        <LoginForm login={login} />
       </Route>
       <Route exact path="/companies">
         <CompanyList />
@@ -26,7 +27,6 @@ function Routes({}) {
       </Route>
       <Route exact path="/jobs">
         <JobList />
-        {/* <JobList /> */}
       </Route>
       <Route exact path="/profile">
         {/* <Profile /> */}

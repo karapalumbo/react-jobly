@@ -17,7 +17,7 @@ function NavBar() {
             <NavLink href="/profile">Profile</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/login">Login/ Logout</NavLink>
+            <NavLink href="/login">Login</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/signup">Signup</NavLink>
