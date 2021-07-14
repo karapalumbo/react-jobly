@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { useHistory } from "react-router-dom";
-import JoblyApi from "./api/api";
 
 const SignupForm = ({ signup }) => {
   const history = useHistory();
@@ -15,9 +14,12 @@ const SignupForm = ({ signup }) => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    let res = await JoblyApi.signup(formData);
-    setFormData(res);
-    history.push("/company");
+    let res = await signup(formData);
+    if (res.success) {
+      history.push("/companies");
+    } else {
+      console.log("Error");
+    }
   }
 
   function handleChange(e) {
@@ -85,7 +87,7 @@ const SignupForm = ({ signup }) => {
           onChange={handleChange}
         />
       </FormGroup>
-      <Button onSubmit={handleSubmit}>Signup</Button>
+      <Button>Signup</Button>
     </Form>
   );
 };
