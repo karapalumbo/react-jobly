@@ -12,9 +12,12 @@ const LoginForm = ({ login }) => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    let res = await JoblyApi.login(formData);
-    setFormData(res);
-    history.push("/company");
+    let res = await login(formData);
+    if (res.success) {
+      history.push("/company");
+    } else {
+      console.log("login error");
+    }
   }
 
   function handleChange(e) {
@@ -49,7 +52,7 @@ const LoginForm = ({ login }) => {
           onChange={handleChange}
         />
       </FormGroup>
-      <Button onSubmit={handleSubmit}>Login</Button>
+      <Button>Login</Button>
     </Form>
     // <form onSubmit={handleSubmit}>
     //   <h1>Login</h1>

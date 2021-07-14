@@ -14,11 +14,17 @@ function App() {
     return { success: true };
   }
 
+  async function login(formData) {
+    let res = await JoblyApi.login(formData);
+    setToken(res);
+    return { success: true };
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
         <NavBar />
-        <Routes signup={signup} />
+        <Routes signup={signup} login={login} />
       </BrowserRouter>
     </div>
   );
