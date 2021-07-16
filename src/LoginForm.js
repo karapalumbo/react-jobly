@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { useHistory } from "react-router-dom";
-import JoblyApi from "./api/api";
 
 const LoginForm = ({ login }) => {
   const history = useHistory();
