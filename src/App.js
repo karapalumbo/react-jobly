@@ -6,9 +6,12 @@ import JoblyApi from "./api/api";
 import jwt from "jsonwebtoken";
 import { useEffect, useState } from "react";
 import UserContext from "./UserContext";
+import useLocalStorage from "./localStorage";
+
+export const TOKEN_ID = "token";
 
 function App() {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useLocalStorage(TOKEN_ID);
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
@@ -17,15 +20,12 @@ function App() {
         JoblyApi.token = token;
         let { username } = jwt.decode(token);
         let currUser = await JoblyApi.getUser(username);
+
         setCurrentUser(currUser);
-      } else {
-        console.log("error");
       }
     }
     findCurrentUser();
   }, [token]);
-
-  console.debug("token", token);
 
   async function signup(formData) {
     let res = await JoblyApi.signup(formData);
@@ -41,7 +41,7 @@ function App() {
 
   function logout() {
     setCurrentUser(null);
-    token(null);
+    setToken(null);
   }
 
   return (

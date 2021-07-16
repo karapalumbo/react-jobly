@@ -46,7 +46,7 @@ const LoginForm = ({ login }) => {
           type="password"
           name="password"
           id="password"
-          placeholder="Emter your password"
+          placeholder="Enter your password"
           value={formData.password}
           onChange={handleChange}
         />

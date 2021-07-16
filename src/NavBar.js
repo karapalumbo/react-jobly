@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import UserContext from "./UserContext";
 import { Nav, NavLink, Navbar, NavItem, NavbarBrand } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function NavBar({ logout }) {
   const { currentUser } = useContext(UserContext);
@@ -22,8 +23,10 @@ function NavBar({ logout }) {
                 <NavLink href="/profile">Profile</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/logout" onClick={logout}>
-                  Logout
+                <NavLink>
+                  <Link to="/" onClick={logout}>
+                    Logout
+                  </Link>
                 </NavLink>
               </NavItem>
             </>
