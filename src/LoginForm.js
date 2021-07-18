@@ -53,28 +53,6 @@ const LoginForm = ({ login }) => {
       </FormGroup>
       <Button>Login</Button>
     </Form>
-    // <form onSubmit={handleSubmit}>
-    //   <h1>Login</h1>
-    //   <label htmlFor="username"></label>
-    //   <input
-    //     id="username"
-    //     type="text"
-    //     name="username"
-    //     placeholder="Enter Username"
-    //     value={formData}
-    //     onChange={handleChange}
-    //   />
-    //   <label htmlFor="password"></label>
-    //   <input
-    //     id="password"
-    //     type="password"
-    //     name="password"
-    //     placeholder="Enter Password"
-    //     value={formData}
-    //     onChange={handleChange}
-    //   />
-    //   <Button>Login</Button>
-    // </form>
   );
 };
 

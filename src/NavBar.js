@@ -10,37 +10,22 @@ function NavBar({ logout }) {
     <div>
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Jobly</NavbarBrand>
-        <Nav>
-          {currentUser ? (
-            <>
-              <NavItem>
-                <NavLink href="/companies">Companies</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/jobs">Jobs</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/profile">Profile</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink>
-                  <Link to="/" onClick={logout}>
-                    Logout
-                  </Link>
-                </NavLink>
-              </NavItem>
-            </>
-          ) : (
-            <>
-              <NavItem>
-                <NavLink href="/login">Login</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/signup">Signup</NavLink>
-              </NavItem>
-            </>
-          )}
-        </Nav>
+
+        {currentUser ? (
+          <>
+            <NavLink href="/companies">Companies</NavLink>
+            <NavLink href="/jobs">Jobs</NavLink>
+            <NavLink href="/profile">Profile</NavLink>
+            <Link to="/" onClick={logout}>
+              Logout {currentUser.username}
+            </Link>
+          </>
+        ) : (
+          <>
+            <NavLink href="/login">Login</NavLink>
+            <NavLink href="/signup">Signup</NavLink>
+          </>
+        )}
       </Navbar>
     </div>
   );
