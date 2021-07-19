@@ -6,15 +6,15 @@ function JobList() {
   const [jobs, setJobs] = useState(null);
 
   const jobInfo = async () => {
-    const resp = await JoblyApi.getJobs();
-    setJobs(resp);
+    const j = await JoblyApi.getJobs();
+    setJobs(j);
   };
 
   useEffect(() => {
     jobInfo();
   }, []);
 
-  if (!jobs) return <div>Still loading</div>;
+  if (!jobs) return <div>Loading...</div>;
 
   return (
     <div>

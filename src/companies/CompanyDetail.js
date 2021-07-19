@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import JoblyApi from "../api/api";
-import JobList from "../jobs/JobList";
+import JobDetail from "../jobs/JobDetail";
 
 function CompanyDetail() {
   const { handle } = useParams();
@@ -17,13 +17,13 @@ function CompanyDetail() {
     companyInfo();
   }, [handle]);
 
-  if (!company) return <div>Still loading</div>;
+  if (!company) return <div>Loading...</div>;
 
   return (
     <div>
       <h5>{company.name}</h5>
       <p>{company.description}</p>
-      <JobList job={company.jobs} />
+      <JobDetail jobs={company.jobs} />
     </div>
   );
 }
