@@ -25,7 +25,7 @@ const SearchForm = ({ searchCompanyAndJob }) => {
         value={formData}
         onChange={handleChange}
       />
-      <Button>Submit</Button>
+      <Button>Search</Button>
     </form>
   );
 };

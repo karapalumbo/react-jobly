@@ -6,7 +6,7 @@ import CompanyDetail from "../companies/CompanyDetail";
 import JobList from "../jobs/JobList";
 import LoginForm from "../LoginForm";
 import SignupForm from "../SignupForm";
-// import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
 import ProfileForm from "../ProfileForm";
 
 function Routes({ login, signup }) {
@@ -24,21 +24,21 @@ function Routes({ login, signup }) {
         <LoginForm login={login} />
       </Route>
 
-      <Route exact path="/companies">
+      <PrivateRoute exact path="/companies">
         <CompanyList />
-      </Route>
+      </PrivateRoute>
 
-      <Route exact path="/companies/:handle">
+      <PrivateRoute exact path="/companies/:handle">
         <CompanyDetail />
-      </Route>
+      </PrivateRoute>
 
-      <Route exact path="/jobs">
+      <PrivateRoute exact path="/jobs">
         <JobList />
-      </Route>
+      </PrivateRoute>
 
-      <Route exact path="/profile">
+      <PrivateRoute exact path="/profile">
         <ProfileForm />
-      </Route>
+      </PrivateRoute>
 
       <Redirect to="/" />
     </Switch>
