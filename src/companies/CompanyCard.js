@@ -1,19 +1,17 @@
 import React from "react";
-import { Card } from "reactstrap";
+import { Card, CardBody, CardText, CardTitle, CardImg } from "reactstrap";
 import "./CompanyCard.css";
 
 function CompanyCard({ name, description, logoUrl, handle }) {
   return (
     <div className="CompanyCard">
-      <Card>
+      <Card className="company-card">
         <a href={`/companies/${handle}`}>
-          <div>
-            <h5>
-              {name}
-              {logoUrl && <img src={logoUrl} alt={name} />}
-            </h5>
-            <p>{description}</p>
-          </div>
+          {logoUrl && <CardImg top width="100%" src={logoUrl} alt={name} />}
+          <CardBody>
+            <CardTitle tag="h5">{name}</CardTitle>
+            <CardText>{description}</CardText>
+          </CardBody>
         </a>
       </Card>
     </div>

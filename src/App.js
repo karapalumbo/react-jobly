@@ -7,6 +7,7 @@ import jwt from "jsonwebtoken";
 import { useEffect, useState } from "react";
 import UserContext from "./UserContext";
 import useLocalStorage from "./localStorage";
+import { Container } from "reactstrap";
 
 export const TOKEN_ID = "token";
 
@@ -54,10 +55,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <UserContext.Provider value={{ currentUser, setCurrentUser }}>
-          <div>
-            <NavBar logout={logout} />
+          <NavBar logout={logout} />
+          <Container>
             <Routes signup={signup} login={login} />
-          </div>
+          </Container>
         </UserContext.Provider>
       </BrowserRouter>
     </div>

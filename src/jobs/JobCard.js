@@ -4,7 +4,7 @@ import "./JobCard.css";
 function JobCard({ title, salary, equity, companyName }) {
   return (
     <div className="JobCard">
-      <Card>
+      <Card className="job-card">
         <h5>{title}</h5>
         <p>{companyName}</p>
         {salary && (

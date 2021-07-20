@@ -1,4 +1,10 @@
-.CompanyCard {
-  width: 1000px;
-  margin: 30px;
+.company-card {
+  margin-bottom: 20px;
+  text-align: left;
+  padding: 24px;
+}
+
+.company-card a {
+  color: black;
+  text-decoration: none;
 }

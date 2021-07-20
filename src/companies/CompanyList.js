@@ -1,6 +1,6 @@
 import JoblyApi from "../api/api";
 import CompanyCard from "./CompanyCard";
-import SearchForm from "../SearchForm";
+import SearchForm from "../forms/SearchForm";
 import { useState, useEffect } from "react";
 
 function CompanyList() {
@@ -15,9 +15,11 @@ function CompanyList() {
     companyInfo();
   }, []);
 
+  if (!companies) return <div>Loading...</div>;
+
   return (
     <div>
-      <SearchForm searchCompanyAndJob={companyInfo} />
+      <SearchForm search={companyInfo} />
       <div>
         {companies.map((c) => {
           return (

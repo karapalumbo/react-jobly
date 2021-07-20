@@ -1,6 +1,7 @@
 import JobCard from "./JobCard";
 import React, { useState, useEffect } from "react";
 import JoblyApi from "../api/api";
+import SearchForm from "../forms/SearchForm";
 
 function JobList() {
   const [jobs, setJobs] = useState(null);
@@ -18,6 +19,7 @@ function JobList() {
 
   return (
     <div>
+      <SearchForm search={jobInfo} />
       {jobs.map((job) => (
         <JobCard
           key={job.id}

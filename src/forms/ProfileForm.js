@@ -1,7 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import UserContext from "./UserContext";
-import JoblyApi from "./api/api";
+import UserContext from "../UserContext";
+import JoblyApi from "../api/api";
 
 const ProfileForm = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);

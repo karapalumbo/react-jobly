@@ -4,10 +4,10 @@ import Homepage from "../Homepage";
 import CompanyList from "../companies/CompanyList";
 import CompanyDetail from "../companies/CompanyDetail";
 import JobList from "../jobs/JobList";
-import LoginForm from "../LoginForm";
-import SignupForm from "../SignupForm";
+import LoginForm from "../forms/LoginForm";
+import SignupForm from "../forms/SignupForm";
 import PrivateRoute from "./PrivateRoute";
-import ProfileForm from "../ProfileForm";
+import ProfileForm from "../forms/ProfileForm";
 
 function Routes({ login, signup }) {
   return (
