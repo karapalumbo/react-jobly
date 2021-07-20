@@ -8,24 +8,25 @@ function NavBar({ logout }) {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <Navbar className="Navigation" color="light" expand="md">
+    <Navbar className="nav-container" color="light" expand="md">
       <NavbarBrand href="/">Jobly</NavbarBrand>
-
-      {currentUser ? (
-        <>
-          <NavLink href="/companies">Companies</NavLink>
-          <NavLink href="/jobs">Jobs</NavLink>
-          <NavLink href="/profile">Profile</NavLink>
-          <Link className="nav-link" to="/" onClick={logout}>
-            Logout {currentUser.username}
-          </Link>
-        </>
-      ) : (
-        <>
-          <NavLink href="/login">Login</NavLink>
-          <NavLink href="/signup">Signup</NavLink>
-        </>
-      )}
+      <div className="nav-links">
+        {currentUser ? (
+          <>
+            <NavLink href="/companies">Companies</NavLink>
+            <NavLink href="/jobs">Jobs</NavLink>
+            <NavLink href="/profile">Profile</NavLink>
+            <Link className="nav-link" to="/" onClick={logout}>
+              Logout {currentUser.username}
+            </Link>
+          </>
+        ) : (
+          <>
+            <NavLink href="/login">Login</NavLink>
+            <NavLink href="/signup">Signup</NavLink>
+          </>
+        )}
+      </div>
     </Navbar>
   );
 }

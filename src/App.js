@@ -15,6 +15,7 @@ function App() {
   const [token, setToken] = useLocalStorage(TOKEN_ID);
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [appliedID, setAppliedID] = useState(new Set([]));
 
   useEffect(() => {
     async function findCurrentUser() {
@@ -23,6 +24,7 @@ function App() {
         JoblyApi.token = token;
         let currUser = await JoblyApi.getUser(username);
         setCurrentUser(currUser);
+        setAppliedID(new Set(currUser.applications));
       }
       setIsLoaded(true);
     }
@@ -47,14 +49,28 @@ function App() {
     setToken(null);
   }
 
+  function hasApplied(id) {
+    return appliedID.has(id);
+  }
+
+  function applyForJob(id) {
+    if (hasApplied(id)) return;
+    JoblyApi.applyToJob(currentUser.username, id);
+    setAppliedID(new Set([...appliedID, id]));
+  }
+
   if (!isLoaded) {
     return <div>Loading...</div>;
   }
 
+  console.warn(appliedID);
+
   return (
     <div className="App">
       <BrowserRouter>
-        <UserContext.Provider value={{ currentUser, setCurrentUser }}>
+        <UserContext.Provider
+          value={{ currentUser, setCurrentUser, applyForJob, hasApplied }}
+        >
           <NavBar logout={logout} />
           <Container>
             <Routes signup={signup} login={login} />

@@ -1,13 +1,13 @@
-import JobCard from "./JobCard";
 import React, { useState, useEffect } from "react";
 import JoblyApi from "../api/api";
 import SearchForm from "../forms/SearchForm";
+import JobDetail from "./JobDetail";
 
 function JobList() {
   const [jobs, setJobs] = useState(null);
 
-  const jobInfo = async () => {
-    const j = await JoblyApi.getJobs();
+  const jobInfo = async (title) => {
+    const j = await JoblyApi.getJobs(title);
     setJobs(j);
   };
 
@@ -20,16 +20,11 @@ function JobList() {
   return (
     <div>
       <SearchForm search={jobInfo} />
-      {jobs.map((job) => (
-        <JobCard
-          key={job.id}
-          id={job.id}
-          title={job.title}
-          salary={job.salary}
-          equity={job.equity}
-          companyName={job.companyName}
-        />
-      ))}
+      {jobs.length ? (
+        <JobDetail jobs={jobs} />
+      ) : (
+        <p>Sorry, no results found.</p>
+      )}
     </div>
   );
 }

@@ -6,8 +6,8 @@ import { useState, useEffect } from "react";
 function CompanyList() {
   const [companies, setCompanies] = useState([]);
 
-  const companyInfo = async () => {
-    const resp = await JoblyApi.getCompanies();
+  const companyInfo = async (name) => {
+    const resp = await JoblyApi.getCompanies(name);
     setCompanies(resp);
   };
 
@@ -20,19 +20,24 @@ function CompanyList() {
   return (
     <div>
       <SearchForm search={companyInfo} />
-      <div>
-        {companies.map((c) => {
-          return (
-            <CompanyCard
-              key={c.handle}
-              handle={c.handle}
-              name={c.name}
-              description={c.description}
-              logoUrl={c.logoUrl}
-            />
-          );
-        })}
-      </div>
+
+      {companies.length ? (
+        <div>
+          {companies.map((c) => {
+            return (
+              <CompanyCard
+                key={c.handle}
+                handle={c.handle}
+                name={c.name}
+                description={c.description}
+                logoUrl={c.logoUrl}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <p>Sorry, no results found.</p>
+      )}
     </div>
   );
 }

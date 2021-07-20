@@ -4,7 +4,7 @@ import "./CompanyCard.css";
 
 function CompanyCard({ name, description, logoUrl, handle }) {
   return (
-    <div className="CompanyCard">
+    <div className="company-card-container">
       <Card className="company-card">
         <a href={`/companies/${handle}`}>
           {logoUrl && <CardImg top width="100%" src={logoUrl} alt={name} />}
