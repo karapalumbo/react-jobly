@@ -6,7 +6,6 @@ import "./CompanyDetail.css";
 
 function CompanyDetail() {
   const { handle } = useParams();
-
   const [company, setCompany] = useState(null);
 
   const companyInfo = async () => {
