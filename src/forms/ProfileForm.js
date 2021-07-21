@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import UserContext from "../UserContext";
 import JoblyApi from "../api/api";
+import "./ProfileForm.css";
 
 const ProfileForm = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
@@ -49,7 +50,9 @@ const ProfileForm = () => {
           <p>{formData.username}</p>
         </FormGroup>
         <FormGroup>
-          <Label for="firstName">First Name</Label>
+          <Label className="label" for="firstName">
+            First Name
+          </Label>
           <Input
             type="firstName"
             name="firstName"
@@ -60,7 +63,9 @@ const ProfileForm = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="lastName">Last Name</Label>
+          <Label className="label" for="lastName">
+            Last Name
+          </Label>
           <Input
             type="lastName"
             name="lastName"
@@ -71,7 +76,9 @@ const ProfileForm = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="email">Email</Label>
+          <Label className="label" for="email">
+            Email
+          </Label>
           <Input
             type="email"
             name="email"
@@ -82,7 +89,9 @@ const ProfileForm = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="password">Confirm password to make changes:</Label>
+          <Label className="label" for="password">
+            Confirm password to make changes:
+          </Label>
           <Input
             type="password"
             name="password"
@@ -92,7 +101,9 @@ const ProfileForm = () => {
           />
         </FormGroup>
 
-        <Button onClick={handleSubmit}>Save Changes</Button>
+        <Button className="profile-btn" onClick={handleSubmit}>
+          Save Changes
+        </Button>
       </Form>
     </div>
   );

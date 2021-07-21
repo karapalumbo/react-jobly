@@ -1,0 +1,9 @@
+.label {
+  display: flex;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.profile-btn {
+  margin-top: 20px;
+}
