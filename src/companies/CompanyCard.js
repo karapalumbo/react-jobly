@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardBody, CardText, CardTitle, CardImg } from "reactstrap";
+import { Link } from "react-router-dom";
 import "./CompanyCard.css";
 
 function CompanyCard({ name, description, logoUrl, handle }) {

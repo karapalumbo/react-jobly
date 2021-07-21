@@ -4,29 +4,31 @@ import UserContext from "../UserContext";
 import "./JobCard.css";
 
 function JobCard({ id, title, salary, equity, companyName }) {
-  const { applyForJob, hasApplied } = useContext(UserContext);
+  const { hasApplied, applyToJob } = useContext(UserContext);
   const [applied, setApplied] = useState();
 
-  //   useEffect(() => {
-  //     setApplied(applyForJob(id));
-  //   }, [id, applyForJob]);
+  React.useEffect(
+    function updateAppliedStatus() {
+      setApplied(hasApplied(id));
+    },
+    [id, hasApplied]
+  );
 
   const handleApply = async () => {
     if (hasApplied(id)) return;
-    applyForJob(id);
+    applyToJob(id);
     setApplied(true);
   };
 
   return (
     <div className="JobCard">
       <Card className="job-card">
-        {/* {applied} */}
         <div>
           <h5>{title}</h5>
           <p>{companyName}</p>
           {salary && (
             <div>
-              <p>Salary: {formatter.format(salary)}</p>
+              <p>Salary: {salaryFormatter.format(salary)}</p>
             </div>
           )}
           {equity !== undefined && (
@@ -48,7 +50,7 @@ function JobCard({ id, title, salary, equity, companyName }) {
   );
 }
 
-let formatter = new Intl.NumberFormat("en-US", {
+let salaryFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
 });

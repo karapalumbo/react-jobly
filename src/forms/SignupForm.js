@@ -18,7 +18,7 @@ const SignupForm = ({ signup }) => {
     if (res.success) {
       history.push("/companies");
     } else {
-      console.log("Handle Submit Error");
+      throw new Error("Error signing up.");
     }
   }
 

@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import UserContext from "./UserContext";
 import { Link } from "react-router-dom";
+import "./Homepage.css";
 
 function Homepage() {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <div className="Homepage">
+    <div className="homepage">
       <h1>Jobly</h1>
       <p>All the jobs in one, convenient place.</p>
       {currentUser ? (

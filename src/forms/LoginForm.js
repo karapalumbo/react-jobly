@@ -15,7 +15,7 @@ const LoginForm = ({ login }) => {
     if (res.success) {
       history.push("/company");
     } else {
-      console.log("login error");
+      throw new Error("Error logging in.");
     }
   }
 
