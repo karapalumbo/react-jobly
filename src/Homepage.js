@@ -13,7 +13,7 @@ function Homepage() {
       {currentUser ? (
         <h2>Welcome back, {currentUser.firstName || currentUser.username}!</h2>
       ) : (
-        <p>
+        <>
           <div>
             <Link to="/login">Log in</Link>
           </div>
@@ -21,7 +21,7 @@ function Homepage() {
           <div>
             <Link to="/signup">Sign up</Link>
           </div>
-        </p>
+        </>
       )}
     </div>
   );

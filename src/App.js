@@ -1,4 +1,3 @@
-import "./App.css";
 import NavBar from "./NavBar";
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./routes/Routes";
@@ -8,6 +7,8 @@ import { useEffect, useState } from "react";
 import UserContext from "./UserContext";
 import useLocalStorage from "./localStorage";
 import { Container } from "reactstrap";
+
+import "./App.css";
 
 export const TOKEN_ID = "token";
 
