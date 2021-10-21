@@ -1,0 +1,17 @@
+.signup-form {
+  position: absolute;
+  top: 15%;
+  left: 30%;
+}
+
+.signup-btn {
+  margin-top: 20px;
+}
+
+h3 {
+  margin-bottom: 40px !important;
+}
+
+.signup-container {
+  width: 500px;
+}
