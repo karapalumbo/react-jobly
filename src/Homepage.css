@@ -1,3 +1,47 @@
-.homepage {
-  margin: 100px;
+.homepage-container {
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  opacity: 0.5;
+  position: absolute;
+  left: 50%;
+}
+
+.heading-text {
+  position: absolute;
+  top: 40%;
+  left: 14%;
+}
+
+.login-signup {
+  position: absolute;
+  top: 53%;
+  left: 14%;
+}
+
+.register-btn {
+  margin: 25px;
+  background-color: rgb(233, 186, 183);
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
+
+.signup-btn {
+  background-color: lightblue;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
 }
