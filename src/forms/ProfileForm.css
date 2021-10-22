@@ -7,3 +7,14 @@
 .profile-btn {
   margin-top: 20px;
 }
+
+.profile-form {
+  margin-left: 100px;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+}
+
+.input-container {
+  width: 500px;
+}

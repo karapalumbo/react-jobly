@@ -9,7 +9,9 @@ function NavBar({ logout }) {
 
   return (
     <Navbar className="nav-container" color="light" expand="md">
-      <NavbarBrand href="/">Jobly</NavbarBrand>
+      <NavbarBrand href="/" className="navbar-brand">
+        Jobly
+      </NavbarBrand>
       <div className="nav-links">
         {currentUser ? (
           <>
@@ -22,8 +24,12 @@ function NavBar({ logout }) {
           </>
         ) : (
           <>
-            <NavLink href="/login">Login</NavLink>
-            <NavLink href="/signup">Signup</NavLink>
+            <NavLink href="/login" className="login-link">
+              Login
+            </NavLink>
+            <NavLink href="/signup" className="signup-link">
+              Signup
+            </NavLink>
           </>
         )}
       </div>

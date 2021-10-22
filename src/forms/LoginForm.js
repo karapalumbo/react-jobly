@@ -14,7 +14,7 @@ const LoginForm = ({ login }) => {
     e.preventDefault();
     let res = await login(formData);
     if (res.success) {
-      history.push("/company");
+      history.push("/companies");
     } else {
       throw new Error("Error logging in.");
     }

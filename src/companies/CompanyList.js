@@ -2,6 +2,7 @@ import JoblyApi from "../api/api";
 import CompanyCard from "./CompanyCard";
 import SearchForm from "../forms/SearchForm";
 import { useState, useEffect } from "react";
+import Loading from "../Loading";
 
 function CompanyList() {
   const [companies, setCompanies] = useState([]);
@@ -15,7 +16,7 @@ function CompanyList() {
     companyInfo();
   }, []);
 
-  if (!companies) return <div>Loading...</div>;
+  if (!companies) return <Loading />;
 
   return (
     <div>

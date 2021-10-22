@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import JoblyApi from "../api/api";
 import JobDetail from "../jobs/JobDetail";
+import Loading from "../Loading";
 import "./CompanyDetail.css";
 
 function CompanyDetail() {
@@ -17,7 +18,7 @@ function CompanyDetail() {
     companyInfo();
   }, [handle]);
 
-  if (!company) return <div>Loading...</div>;
+  if (!company) return <Loading />;
 
   return (
     <div>

@@ -43,63 +43,61 @@ const ProfileForm = () => {
 
   return (
     <div>
-      <h2>Profile</h2>
-      <Form>
-        <FormGroup>
-          <Label for="username">Username</Label>
-          <p>{formData.username}</p>
-        </FormGroup>
-        <FormGroup>
-          <Label className="label" for="firstName">
-            First Name
-          </Label>
-          <Input
-            type="firstName"
-            name="firstName"
-            id="firstName"
-            placeholder={formData.firstName}
-            value={formData.firstName}
-            onChange={handleChange}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label className="label" for="lastName">
-            Last Name
-          </Label>
-          <Input
-            type="lastName"
-            name="lastName"
-            id="lastName"
-            placeholder={formData.lastName}
-            value={formData.lastName}
-            onChange={handleChange}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label className="label" for="email">
-            Email
-          </Label>
-          <Input
-            type="email"
-            name="email"
-            id="email"
-            placeholder={formData.email}
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label className="label" for="password">
-            Confirm password to make changes:
-          </Label>
-          <Input
-            type="password"
-            name="password"
-            id="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </FormGroup>
+      <Form className="profile-form">
+        <h1>{formData.username}'s Profile</h1>
+        <div className="input-container">
+          <FormGroup>
+            <Label className="label" for="firstName">
+              First Name
+            </Label>
+            <Input
+              type="firstName"
+              name="firstName"
+              id="firstName"
+              placeholder={formData.firstName}
+              value={formData.firstName}
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label className="label" for="lastName">
+              Last Name
+            </Label>
+            <Input
+              type="lastName"
+              name="lastName"
+              id="lastName"
+              placeholder={formData.lastName}
+              value={formData.lastName}
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label className="label" for="email">
+              Email
+            </Label>
+            <Input
+              type="email"
+              name="email"
+              id="email"
+              placeholder={formData.email}
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label className="label" for="password">
+              Confirm password to make changes:
+            </Label>
+            <Input
+              type="password"
+              name="password"
+              id="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+          </FormGroup>
+        </div>
 
         <Button className="profile-btn" onClick={handleSubmit}>
           Save Changes

@@ -1,9 +1,16 @@
 .nav-container {
   border-bottom: 2px solid lightgray;
-  padding: 100px;
   justify-content: space-between !important;
 }
 
 .nav-links {
   display: inline-flex;
+}
+
+.navbar-brand {
+  margin-left: 20px;
+}
+
+.signup-link {
+  margin-right: 20px;
 }

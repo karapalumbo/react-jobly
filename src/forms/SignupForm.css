@@ -15,3 +15,7 @@ h3 {
 .signup-container {
   width: 500px;
 }
+
+.error {
+  margin-top: 20px;
+}

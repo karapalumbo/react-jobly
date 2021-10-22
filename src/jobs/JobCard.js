@@ -39,7 +39,6 @@ function JobCard({ id, title, salary, equity, companyName }) {
           <Button
             disabled={applied}
             onClick={handleApply}
-            color="primary"
             className="apply-btn"
           >
             {applied ? "Applied" : "Apply"}

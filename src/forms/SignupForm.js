@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { useHistory } from "react-router-dom";
+import Alert from "../Alert";
 import "./SignupForm.css";
 
 const SignupForm = ({ signup }) => {
@@ -13,13 +14,17 @@ const SignupForm = ({ signup }) => {
     email: "",
   });
 
+  const [formErrors, setFormErrors] = useState([]);
+
   async function handleSubmit(e) {
     e.preventDefault();
-    let res = await signup(formData);
-    if (res.success) {
-      history.push("/companies");
-    } else {
-      throw new Error("Error signing up.");
+    try {
+      let res = await signup(formData);
+      if (res.success) {
+        history.push("/companies");
+      }
+    } catch (error) {
+      setFormErrors(error);
     }
   }
 
@@ -101,6 +106,11 @@ const SignupForm = ({ signup }) => {
             onChange={handleChange}
           />
         </FormGroup>
+      </div>
+      <div className="error">
+        {formErrors.length ? (
+          <Alert color="danger" isAlertOpen={true} msg={formErrors[0]} />
+        ) : null}
       </div>
       <Button className="signup-btn">Signup</Button>
     </Form>

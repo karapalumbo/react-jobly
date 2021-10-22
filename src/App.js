@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import UserContext from "./UserContext";
 import useLocalStorage from "./localStorage";
 import { Container } from "reactstrap";
+import Loading from "./Loading";
 
 import "./App.css";
 
@@ -61,7 +62,7 @@ function App() {
   }
 
   if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
